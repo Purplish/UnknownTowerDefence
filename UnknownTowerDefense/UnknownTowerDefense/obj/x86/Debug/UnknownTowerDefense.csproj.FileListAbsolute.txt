@@ -1,0 +1,16 @@
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\dirt.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\grass.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\UnknownTowerDefense.exe
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\UnknownTowerDefense.pdb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\obj\x86\Debug\UnknownTowerDefense.exe
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\obj\x86\Debug\UnknownTowerDefense.pdb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\nerd.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\tower.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\bullet.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\bar.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\Arial.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\towerhover.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\towerpressed.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\tower_normal.xnb

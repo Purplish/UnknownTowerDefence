@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
+
+namespace UnknownTowerDefense
+{
+    class Toolbar
+    {
+        private Texture2D texture;
+        private SpriteFont font;
+        private Vector2 position;
+        private Vector2 textPosition;
+        private Rectangle destrect;
+
+        public Toolbar(Texture2D texture, SpriteFont font, Vector2 position)
+        {
+            this.texture = texture;
+            this.font = font;
+            this.position = position;
+            textPosition = new Vector2(130, position.Y + 10);
+
+        }
+        public void Update(GameTime gameTime)
+        {
+
+        }
+
+        public void Draw(SpriteBatch spriteBatch, Player player)
+        {
+            spriteBatch.Draw(texture, position, Color.White);
+            string text = string.Format("Gold : {0} Lives : {1}", player.Money, player.Lives);
+            spriteBatch.DrawString(font, text, textPosition, Color.White);
+        }
+
+    }
+}

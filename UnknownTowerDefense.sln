@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnknownTowerDefense", "UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense.csproj", "{FC9DF1C4-F848-45A1-A53B-916F600FD2FA}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "UnknownTowerDefenseContent", "UnknownTowerDefense\UnknownTowerDefenseContent\UnknownTowerDefenseContent.contentproj", "{BAB3E33F-19B3-433F-8654-29F1B1B9EBE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC9DF1C4-F848-45A1-A53B-916F600FD2FA}.Debug|x86.ActiveCfg = Debug|x86
+		{FC9DF1C4-F848-45A1-A53B-916F600FD2FA}.Debug|x86.Build.0 = Debug|x86
+		{FC9DF1C4-F848-45A1-A53B-916F600FD2FA}.Release|x86.ActiveCfg = Release|x86
+		{FC9DF1C4-F848-45A1-A53B-916F600FD2FA}.Release|x86.Build.0 = Release|x86
+		{BAB3E33F-19B3-433F-8654-29F1B1B9EBE3}.Debug|x86.ActiveCfg = Debug|x86
+		{BAB3E33F-19B3-433F-8654-29F1B1B9EBE3}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
