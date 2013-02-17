@@ -22,7 +22,7 @@ namespace UnknownTowerDefense
         {
             base.Update(gameTime);
 
-            if (bulletTimer >= 1.25f && target != null)
+            if (bulletTimer >= 1.15f && target != null)
             {
                 Bullet bullet = new Bullet(bulletTexture, Vector2.Subtract(center,
                     new Vector2(bulletTexture.Width / 2)), rotation, 6, damage);
