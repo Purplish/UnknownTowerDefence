@@ -10,7 +10,7 @@ namespace UnknownTowerDefense
 {
     class Player
     {
-        private int money = 30;
+        private int money = 200;
 
         private int lives = 30;
 
@@ -54,6 +54,10 @@ namespace UnknownTowerDefense
                 money -= towerToAdd.Cost;
 
                 // Reset the newTowerType field.
+                if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+                {
+
+                }else
                 newTowerType = string.Empty;
             }
         }
