@@ -10,7 +10,7 @@ namespace UnknownTowerDefense
 {
     class Player
     {
-        private int money = 100;
+        private int money = 30;
 
         private int lives = 30;
 
@@ -142,13 +142,12 @@ namespace UnknownTowerDefense
             return inBounds && spaceClear && onPath; // If both checks are true return true
 
         }
-
+        Game1 t;
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            
             foreach (Tower tower in towers)
-            {
-                
+            {                
                 tower.Draw(spriteBatch);
             }
         }
