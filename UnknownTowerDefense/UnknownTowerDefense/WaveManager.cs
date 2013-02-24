@@ -77,7 +77,7 @@ namespace UnknownTowerDefense
                 timeSinceLastWave += (float)gameTime.ElapsedGameTime.TotalSeconds; 
             }
 
-            if (timeSinceLastWave > 10.0f) 
+            if (timeSinceLastWave > 11.0f) 
             {
                 waves.Dequeue(); 
                 StartNextWave();
