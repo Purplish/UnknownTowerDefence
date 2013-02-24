@@ -25,7 +25,7 @@ namespace UnknownTowerDefense
         Player player;
         Toolbar toolBar;
         Button arrowButton;
-
+        SpriteFont font;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -153,6 +153,7 @@ namespace UnknownTowerDefense
     toolBar.Draw(spriteBatch, player);
     arrowButton.Draw(spriteBatch);
 
+            
     spriteBatch.End();
 
 
