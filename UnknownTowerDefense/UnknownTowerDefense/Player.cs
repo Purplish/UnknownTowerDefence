@@ -13,11 +13,14 @@ namespace UnknownTowerDefense
         private int money = 200;
 
         private int lives = 30;
-
+        private Tower towerToAdd = null;
         private List<Tower> towers = new List<Tower>();
         private Texture2D bulletTexture;
         private MouseState mouseState; // Mouse state for the current frame
         private MouseState oldState; // Mouse state for the previous frame
+        private Player player;
+
+       
 
         private Level level;
 
@@ -35,7 +38,7 @@ namespace UnknownTowerDefense
 
         public void AddTower()
         {
-            Tower towerToAdd = null;
+            
 
             switch (newTowerType)
             {
@@ -97,6 +100,10 @@ namespace UnknownTowerDefense
             tileX = cellX * 32; // Convert from array space to level space
             tileY = cellY * 32; // Convert from array space to level space
 
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad1))
+            {
+                this.newTowerType = "Arrow Tower";
+            }
             if (mouseState.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Pressed)
             {
                 if (string.IsNullOrEmpty(newTowerType) == false)

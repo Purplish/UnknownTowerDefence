@@ -13,7 +13,6 @@ namespace UnknownTowerDefense
         private SpriteFont font;
         private Vector2 position;
         private Vector2 textPosition;
-        private Rectangle destrect;
 
         public Toolbar(Texture2D texture, SpriteFont font, Vector2 position)
         {
