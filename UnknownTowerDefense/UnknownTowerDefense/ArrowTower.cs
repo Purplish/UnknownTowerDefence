@@ -14,7 +14,7 @@ namespace UnknownTowerDefense
             : base(texture, bulletTexture, position)
         {
             this.damage = 15; // Set the damage
-            this.cost = 50;   // Set the initial cost
+            this.cost = 15;   // Set the initial cost
             this.radius = 80; // Set the radius
         }
 
