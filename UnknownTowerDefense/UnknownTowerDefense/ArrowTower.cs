@@ -15,7 +15,7 @@ namespace UnknownTowerDefense
         {
             this.damage = 15; // Set the damage
             this.cost = 15;   // Set the initial cost
-            this.radius = 80; // Set the radius
+            this.radius = 80; // Set the radius//
         }
 
         public override void Update(GameTime gameTime)
