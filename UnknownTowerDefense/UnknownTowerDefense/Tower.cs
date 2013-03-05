@@ -18,6 +18,7 @@ namespace UnknownTowerDefense
         protected float bulletTimer;
         protected Enemy enemy;
         protected float radius; // How far the tower can shoot
+        protected String name = "";
 
         protected Enemy target;
 
@@ -25,27 +26,38 @@ namespace UnknownTowerDefense
         public Enemy Target
         {
             get { return target; }
+            set { this.target = value; }
         }
 
         public int Cost
         {
             get { return cost; }
+            set { this.cost = value; }
         }
 
         public int Damage
         {
             get { return damage; }
+            set { this.damage = value; }
         }
 
         public float Radius
         {
             get { return radius; }
+            set { this.radius = value; }
         }
 
-        public Tower(Texture2D texture, Texture2D bulletTexture, Vector2 position)
+        public String Name
+        {
+            get { return name; }
+            set { this.name = value; }
+        }
+
+        public Tower(Texture2D texture, Texture2D bulletTexture, Vector2 position, String name)
             : base(texture, position)
         {
             this.bulletTexture = bulletTexture;
+            this.name = name;
         }
 
         public bool IsInRange(Vector2 position)
@@ -70,10 +82,11 @@ namespace UnknownTowerDefense
         }
         protected void FaceTarget()
         {
-            Vector2 direction = center - target.Center;
-            direction.Normalize();
-            rotation = (float)Math.Atan2(-direction.X, direction.Y);
-        }
+
+                Vector2 direction = center - target.Center;
+                direction.Normalize();
+                rotation = (float)Math.Atan2(-direction.X, direction.Y);
+         }
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);

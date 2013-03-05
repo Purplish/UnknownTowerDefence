@@ -7,22 +7,28 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace UnknownTowerDefense
 {
-    class ArrowTower : Tower
+    class SlowTower : Tower
     {
 
-        public ArrowTower(Texture2D texture, Texture2D bulletTexture, Vector2 position, String name)
+        private float speedModifier;
+        private float modifierDuration;
+
+        public SlowTower(Texture2D texture, Texture2D bulletTexture, Vector2 position, String name)
             : base(texture, bulletTexture, position, name)
         {
-            this.damage = 9; // Set the damage
+            this.damage = 0; // Set the damage
             this.cost = 50;   // Set the initial cost
             this.radius = 80; // Set the radius//
+            this.speedModifier = 0.6f;
+            this.modifierDuration = 3.0f;
+            
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
 
-            if (bulletTimer >= 1.15f && target != null)
+            if (bulletTimer >= 0.5f && target != null)
             {
                 Bullet bullet = new Bullet(bulletTexture, Vector2.Subtract(center,
                     new Vector2(bulletTexture.Width / 2)), rotation, 6, damage);
@@ -43,8 +49,15 @@ namespace UnknownTowerDefense
                     target.CurrentHealth -= bullet.Damage;
 
                     bullet.Kill();
+                    if (target.SpeedModifier <= speedModifier)
+                    {
+                        target.SpeedModifier = speedModifier;
+                        target.ModifierDuration = modifierDuration;
+                    }
+                    
 
                 }
+              
                 if (bullet.IsDead())
                 {
                     bulletList.Remove(bullet);

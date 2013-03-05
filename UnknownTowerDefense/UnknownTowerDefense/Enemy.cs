@@ -13,6 +13,9 @@ namespace UnknownTowerDefense
         protected float currentHealth;
         protected bool alive = true;
         protected float speed = 0.5F;
+        protected float speedModifier;
+        protected float modifierDuration;
+        protected float modifierCurrentTime;
         protected int bountyGiven;
 
         private Queue<Vector2> waypoints = new Queue<Vector2>();
@@ -37,9 +40,30 @@ namespace UnknownTowerDefense
             set { currentHealth = value; }
         }
 
+        public float SpeedModifier
+        {
+            get { return speedModifier; }
+            set { speedModifier = value; }
+        }
+
+        public float ModifierDuration
+        {
+            get { return modifierDuration; }
+            set 
+            {
+                modifierDuration = value;
+                modifierCurrentTime = 0;
+            }
+        }
+
         public bool IsDead
         {
             get { return !alive; }
+        }
+
+        public float HealthPercentage
+        {
+            get { return currentHealth / startHealth; }
         }
 
         public int BountyGiven
@@ -70,7 +94,22 @@ namespace UnknownTowerDefense
                 {
                     Vector2 direction = waypoints.Peek() - position;
                     direction.Normalize();
-                    velocity = Vector2.Multiply(direction, speed);
+
+                    float temporarySpeed = speed;
+
+                    if (modifierCurrentTime > modifierDuration)
+                    {
+                        speedModifier = 0;
+                        modifierCurrentTime = 0;
+                    }
+
+                    if (speedModifier != 0 && modifierCurrentTime < modifierDuration)
+                    {
+                        temporarySpeed *= speedModifier;
+                        modifierCurrentTime += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    }
+                    
+                    velocity = Vector2.Multiply(direction, temporarySpeed);
                     position += velocity;
                 }
             }
@@ -89,10 +128,17 @@ namespace UnknownTowerDefense
         {
             if (alive)
             {
+                Color color;
                 float healthPercentage = (float)currentHealth / (float)startHealth;
-
-                Color color = new Color(new Vector3(1 - healthPercentage, 1 - healthPercentage, 1 - healthPercentage));
-                base.Draw(spriteBatch, color);
+                if (this.speedModifier > 0)
+                {
+                    color = new Color(new Vector3(0, 255, 255));
+                }
+                else
+                {
+                    color = new Color(new Vector3(0, 0, 0));
+                }
+                    base.Draw(spriteBatch, color);
 
             }
         }

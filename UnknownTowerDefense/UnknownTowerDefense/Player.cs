@@ -45,7 +45,13 @@ namespace UnknownTowerDefense
                 case "Arrow Tower":
                     {
                         towerToAdd = new ArrowTower(towerTexture,
-                            bulletTexture, new Vector2(tileX, tileY));
+                            bulletTexture, new Vector2(tileX, tileY), "Tower");
+                        break;
+                    }
+                case "Slow Tower":
+                    {
+                        towerToAdd = new SlowTower(towerTexture,
+                            bulletTexture, new Vector2(tileX, tileY), "Slow Tower");
                         break;
                     }
             }
@@ -104,6 +110,10 @@ namespace UnknownTowerDefense
             {
                 this.newTowerType = "Arrow Tower";
             }
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad2))
+            {
+                this.newTowerType = "Slow Tower";
+            }
             if (mouseState.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Pressed)
             {
                 if (string.IsNullOrEmpty(newTowerType) == false)
@@ -116,7 +126,8 @@ namespace UnknownTowerDefense
             {
                 if (tower.Target == null)
                 {
-                    tower.GetClosestEnemy(enemies);
+                    
+                     tower.GetClosestEnemy(enemies);
                 }
 
                 tower.Update(gameTime);
@@ -128,6 +139,10 @@ namespace UnknownTowerDefense
             {
                 if (tower.Target == null)
                 {
+                    if (tower.Name == "Slow Tower") {
+                    
+                    
+                    }else
                     tower.GetClosestEnemy(enemies);
                 }
                 tower.Update(gameTime);

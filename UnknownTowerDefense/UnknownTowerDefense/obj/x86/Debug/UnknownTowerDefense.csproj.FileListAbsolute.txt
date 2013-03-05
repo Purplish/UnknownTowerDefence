@@ -14,3 +14,4 @@ C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\Unknown
 C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\towerhover.xnb
 C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\towerpressed.xnb
 C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\tower_normal.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\healthbar.xnb

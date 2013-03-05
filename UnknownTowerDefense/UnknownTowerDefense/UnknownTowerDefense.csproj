@@ -110,6 +110,7 @@
     <Compile Include="ArrowTower.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Button.cs" />
+    <Compile Include="SlowTower.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Player.cs" />

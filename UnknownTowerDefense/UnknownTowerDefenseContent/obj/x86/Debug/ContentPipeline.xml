@@ -91,6 +91,15 @@
       <Output>C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\tower_normal.xnb</Output>
       <Time>2013-02-16T19:12:31.4023437-08:00</Time>
     </Item>
+    <Item>
+      <Source>healthbar.png</Source>
+      <Name>healthbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\healthbar.xnb</Output>
+      <Time>2013-03-04T21:05:14.6784838-08:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

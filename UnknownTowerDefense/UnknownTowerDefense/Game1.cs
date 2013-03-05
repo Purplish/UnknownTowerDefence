@@ -86,9 +86,10 @@ namespace UnknownTowerDefense
 
             Texture2D towerTexture = Content.Load<Texture2D>("tower_normal");
             Texture2D bulletTexture = Content.Load<Texture2D>("bullet");
+            Texture2D healthBar = Content.Load<Texture2D>("healthbar");
 
             player = new Player(level, towerTexture, bulletTexture);
-            waveManager = new WaveManager(player, level, 24, enemyTexture);
+            waveManager = new WaveManager(player, level, 24, enemyTexture, healthBar);
 
             //tower = new Tower(towerTexture, Vector2.Zero);
            

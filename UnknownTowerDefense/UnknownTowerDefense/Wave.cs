@@ -15,6 +15,7 @@ namespace UnknownTowerDefense
         private float spawnTimer = 0;
         private int enemiesSpawned = 0;
 
+        private Texture2D healthTexture;
         private bool enemyAtEnd;
         private bool spawningEnemies;
         private Level level;
@@ -46,7 +47,7 @@ namespace UnknownTowerDefense
             get { return enemies; }
         }
 
-        public Wave(int waveNumber, int numOfEnemies, Player player, Level level, Texture2D enemyTexture)
+        public Wave(int waveNumber, int numOfEnemies, Player player, Level level, Texture2D enemyTexture, Texture2D healthtexture)
         {
             this.waveNumber = waveNumber;
             this.numOfEnemies = numOfEnemies;
@@ -54,6 +55,7 @@ namespace UnknownTowerDefense
 
             this.level = level;
             this.enemyTexture = enemyTexture;
+            this.healthTexture = healthtexture;
         }
 
         private void AddEnemy()
@@ -106,11 +108,20 @@ namespace UnknownTowerDefense
                 }
             }
         }
-
+    
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (Enemy enemy in enemies)
-                enemy.Draw(spriteBatch);
+            foreach (Enemy enemy in enemies){
+                
+            Rectangle healthRectangle = new Rectangle((int)enemy.Position.X, (int)enemy.Position.Y, healthTexture.Width, healthTexture.Height);
+            spriteBatch.Draw(healthTexture, healthRectangle, Color.Gray);
+            float healthPercentage = enemy.HealthPercentage;
+            float visibleWidth = (float)healthTexture.Width * healthPercentage;
+
+            healthRectangle = new Rectangle((int)enemy.Position.X, (int)enemy.Position.Y, (int)(visibleWidth), healthTexture.Height);
+            spriteBatch.Draw(healthTexture, healthRectangle, Color.Gold);
+            enemy.Draw(spriteBatch);
+            }
         }
     }
 }

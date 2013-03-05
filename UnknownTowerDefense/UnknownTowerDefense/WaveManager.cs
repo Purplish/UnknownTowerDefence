@@ -33,7 +33,7 @@ namespace UnknownTowerDefense
             get { return CurrentWave.RoundNumber + 1; }
         }
 
-        public WaveManager(Player player, Level level, int numberOfWaves, Texture2D enemyTexture)
+        public WaveManager(Player player, Level level, int numberOfWaves, Texture2D enemyTexture, Texture2D healthTexture)
         {
 
             this.numberOfWaves = numberOfWaves;
@@ -47,7 +47,7 @@ namespace UnknownTowerDefense
                 int initialNumerOfEnemies = 6;
 
                 int numberModifier = (i / 6) + 1;
-                Wave wave = new Wave(i, initialNumerOfEnemies * numberModifier, player, level, enemyTexture);
+                Wave wave = new Wave(i, initialNumerOfEnemies * numberModifier, player, level, enemyTexture, healthTexture);
 
                 waves.Enqueue(wave);
             }
