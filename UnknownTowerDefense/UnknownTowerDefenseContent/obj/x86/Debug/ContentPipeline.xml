@@ -98,7 +98,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\healthbar.xnb</Output>
-      <Time>2013-03-04T21:05:14.6784838-08:00</Time>
+      <Time>2013-03-05T20:14:49.2226562-08:00</Time>
+    </Item>
+    <Item>
+      <Source>blood.png</Source>
+      <Name>blood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\blood.xnb</Output>
+      <Time>2013-03-06T21:14:21.3349609-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

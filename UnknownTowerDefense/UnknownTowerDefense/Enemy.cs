@@ -18,6 +18,7 @@ namespace UnknownTowerDefense
         protected float modifierCurrentTime;
         protected int bountyGiven;
 
+
         private Queue<Vector2> waypoints = new Queue<Vector2>();
 
         public void SetWaypoints(Queue<Vector2> waypoints)

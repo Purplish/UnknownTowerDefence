@@ -26,15 +26,24 @@ namespace UnknownTowerDefense
         Toolbar toolBar;
         Button arrowButton;
         SpriteFont font;
+        ParticleEngine particleEngine;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferWidth = level.Width * 32;
-            graphics.PreferredBackBufferHeight = 32 + level.Height * 32;
+            //Set fullscreen
+            graphics.IsFullScreen = false;
+            if (graphics.IsFullScreen == false)
+            {
+                graphics.PreferredBackBufferWidth = level.Width * 32;
+                graphics.PreferredBackBufferHeight = 32 + level.Height * 32;
+            }
+            graphics.ApplyChanges();
+           
             graphics.ApplyChanges();
             IsMouseVisible = true;
-
+            this.Window.Title = "UnknownTD";
 
 
         }
@@ -83,10 +92,13 @@ namespace UnknownTowerDefense
            // enemy1.SetWaypoints(level.Waypoints);
            // wave = new Wave(0, 10, level, enemyTexture);
            // wave.start();
-
+            List<Texture2D> particleTextures = new List<Texture2D>();
             Texture2D towerTexture = Content.Load<Texture2D>("tower_normal");
             Texture2D bulletTexture = Content.Load<Texture2D>("bullet");
             Texture2D healthBar = Content.Load<Texture2D>("healthbar");
+            Texture2D blood = Content.Load<Texture2D>("blood");
+            particleTextures.Add(blood);
+            particleEngine = new ParticleEngine(particleTextures, new Vector2(400, 240), 10);
 
             player = new Player(level, towerTexture, bulletTexture);
             waveManager = new WaveManager(player, level, 24, enemyTexture, healthBar);
@@ -118,7 +130,11 @@ namespace UnknownTowerDefense
         {
             // Allows the game to exit
             waveManager.Update(gameTime);
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+                this.Exit();
 
+
+            
 
             List<Enemy> enemies = new List<Enemy>();
 
@@ -130,6 +146,9 @@ namespace UnknownTowerDefense
             player.Update(gameTime, waveManager.Enemies);
 
 
+         //   drawParticle(Mouse.GetState().X, Mouse.GetState().Y);
+                particleEngine.Update();
+
 
             base.Update(gameTime);
         }
@@ -138,24 +157,36 @@ namespace UnknownTowerDefense
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        /// 
+
+        public void drawParticle(int X, int Y)
+        {
+            particleEngine.EmitterLocation = new Vector2(X, Y);
+        }
         protected override void Draw(GameTime gameTime)
         {
                 GraphicsDevice.Clear(Color.CornflowerBlue);
-
-
-    spriteBatch.Begin(); 
-
-
+                float frameRate = 1 / (float)gameTime.ElapsedGameTime.TotalSeconds;
+                
+ 
+    spriteBatch.Begin();
+  
+    SpriteFont font = Content.Load<SpriteFont>("Arial");
+    
     level.Draw(spriteBatch);
 
     waveManager.Draw(spriteBatch);
    
-    player.Draw(spriteBatch);
+   
     toolBar.Draw(spriteBatch, player);
     arrowButton.Draw(spriteBatch);
-
+    player.Draw(spriteBatch);
+         
+            spriteBatch.DrawString(font, "FPS: "+(int)frameRate, new Vector2(10,10), Color.Black);
+                 
+particleEngine.Draw(spriteBatch);
             
-    spriteBatch.End();
+            spriteBatch.End();
 
 
     base.Draw(gameTime);
