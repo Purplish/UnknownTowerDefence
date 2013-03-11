@@ -60,11 +60,24 @@ namespace UnknownTowerDefense
 
         private void AddEnemy()
         {
-            Enemy enemy = new Enemy(enemyTexture, level.Waypoints.Peek(), 100, 3, 0.5f);
-            enemy.SetWaypoints(level.Waypoints);
-            enemies.Add(enemy);
-            spawnTimer = 0;
-            enemiesSpawned++;
+            
+            if (waveNumber >= 2)
+            {
+                FastEnemy fenemy = new FastEnemy(enemyTexture, level.Waypoints.Peek(), 10, 3, 1.5f);
+                fenemy.SetWaypoints(level.Waypoints);
+                enemies.Add(fenemy);
+                spawnTimer = 0;
+                enemiesSpawned++;
+            }
+            else
+            {
+                Enemy enemy = new Enemy(enemyTexture, level.Waypoints.Peek(), 100, 3, 0.5f);
+                enemy.SetWaypoints(level.Waypoints);
+                enemies.Add(enemy);
+                spawnTimer = 0;
+                enemiesSpawned++;
+            }
+            
         }
 
         public void start()
