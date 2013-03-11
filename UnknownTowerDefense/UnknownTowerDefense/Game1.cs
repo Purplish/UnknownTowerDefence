@@ -26,6 +26,9 @@ namespace UnknownTowerDefense
         Toolbar toolBar;
         Button arrowButton;
         SpriteFont font;
+        Texture2D MainMenuTexture;
+        Rectangle RecMainMenu;
+        bool isMainMenuClicked;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -34,6 +37,8 @@ namespace UnknownTowerDefense
             graphics.PreferredBackBufferHeight = 32 + level.Height * 32;
             graphics.ApplyChanges();
             IsMouseVisible = true;
+            isMainMenuClicked = false;
+            
 
 
 
@@ -67,10 +72,13 @@ namespace UnknownTowerDefense
             Texture2D arrowNormal = Content.Load<Texture2D>("tower");
             Texture2D arrowHover = Content.Load<Texture2D>("towerhover");
             Texture2D arrowPressed = Content.Load<Texture2D>("towerpressed");
+            
 
             arrowButton = new Button(arrowNormal, arrowHover, arrowPressed, new Vector2(0, level.Height * 32 + 2));
             arrowButton.Clicked += new EventHandler(arrowButton_Clicked);
-
+            
+            
+            
             SpriteFont font = Content.Load<SpriteFont>("Arial");
 
             level.AddTexture(grass);
