@@ -27,7 +27,7 @@ namespace UnknownTowerDefense
         Button arrowButton;
         SpriteFont font;
         ParticleEngine particleEngine;
-        Texture2D MainMenuTexture;
+        Texture2D   MainMenuTexture;
         Rectangle RecMainMenu;
         bool Mainmenubool;
 
@@ -139,28 +139,29 @@ namespace UnknownTowerDefense
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            waveManager.Update(gameTime);
+            
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
-            if (/*Mouse.GetState().X == RecMainMenu.X && Mouse.GetState().Y == RecMainMenu.Y && Mouse.GetState().LeftButton == ButtonState.Pressed */ Keyboard.GetState().IsKeyDown(Keys.Enter))
+            if (RecMainMenu.Contains(Mouse.GetState().X, Mouse.GetState().Y) &&(Mouse.GetState().LeftButton == ButtonState.Pressed ))
             {
                 Mainmenubool = true;
 
             }
-           
+
+
+            if (Mainmenubool == true)
+            {
+                List<Enemy> enemies = new List<Enemy>();
+                waveManager.Update(gameTime);
+                arrowButton.Update(gameTime);
+                player.Update(gameTime, waveManager.Enemies);
+                // enemies.Add(wave);
+            }
+
             
 
-            List<Enemy> enemies = new List<Enemy>();
 
-            arrowButton.Update(gameTime);
-
-           // enemies.Add(wave);
-
-
-            player.Update(gameTime, waveManager.Enemies);
-
-
-         //   drawParticle(Mouse.GetState().X, Mouse.GetState().Y);
+            drawParticle(Mouse.GetState().X, Mouse.GetState().Y);
                 particleEngine.Update();
 
 
@@ -185,7 +186,9 @@ namespace UnknownTowerDefense
                 {
                     spriteBatch.Begin();
                     spriteBatch.Draw(MainMenuTexture, RecMainMenu, Color.White);
+                    particleEngine.Draw(spriteBatch);
                     spriteBatch.End();
+                   
                 }
 
                 if (Mainmenubool == true)
@@ -210,7 +213,7 @@ namespace UnknownTowerDefense
 
                     spriteBatch.End();
                 }
-    
+                
 
 
     base.Draw(gameTime);
