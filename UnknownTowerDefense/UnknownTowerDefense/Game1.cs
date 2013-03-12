@@ -29,8 +29,22 @@ namespace UnknownTowerDefense
         ParticleEngine particleEngine;
         Texture2D   MainMenuTexture;
         Rectangle RecMainMenu;
+        Texture2D LoadGameTexture;
+        Rectangle RecLoadGameTexture;
+        Texture2D AboutTexture;
+        Rectangle RecAbout;
+        Texture2D SettingsTexture;
+        Rectangle RecSettings;
+        Texture2D FutureDevelopmentTexture;;
+        Rectangle RecDevelopment
+        
         bool Mainmenubool;
-
+        bool LoadGamebool;
+        bool FutureDevelopmentbool;
+        bool Settingsbool;
+        bool Aboutbool;
+        
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -48,6 +62,10 @@ namespace UnknownTowerDefense
             IsMouseVisible = true;
             this.Window.Title = "UnknownTD";
             Mainmenubool = false;
+            LoadGamebool = false;
+            FutureDevelopmentbool = false;
+            Settingsbool = false;
+            Aboutbool = false;
 
             
         }
@@ -81,10 +99,15 @@ namespace UnknownTowerDefense
             Texture2D arrowHover = Content.Load<Texture2D>("towerhover");
             Texture2D arrowPressed = Content.Load<Texture2D>("towerpressed");
             MainMenuTexture = Content.Load<Texture2D>("LoadGame");
+            SettingsTexture = Content.Load<Texture2D>("Settings");
+            LoadGameTexture = Content.Load<Texture2D>("LoadGame");
+            AboutTexture = Content.Load<Texture2D>("About");
 
 
-
-
+            
+            RecSettings = new Rectangle (30, 30, SettingsTexture.Width, SettingsTexture.Height);
+            RecAbout = new Rectangle(60,60, AboutTexture.Width, AboutTexture.Height);
+            RecLoadGame = new Rectangle (90,90, LoadGameTexture.Width, LoadGameTexture.Height);
             RecMainMenu = new Rectangle(0, 0, MainMenuTexture.Width, MainMenuTexture.Height);
 
             arrowButton = new Button(arrowNormal, arrowHover, arrowPressed, new Vector2(0, level.Height * 32 + 2));
@@ -157,7 +180,23 @@ namespace UnknownTowerDefense
                 player.Update(gameTime, waveManager.Enemies);
                 // enemies.Add(wave);
             }
-
+            
+            if (LoadGamebool == true)
+            {
+             //Put code here for Load game
+            }
+            if (Settingsbool == true)
+            {
+                //put code here for settings
+            }
+            if (FutureDevelopmentbool == true)
+            {
+                //put code here fore future development
+            }
+            if (Aboutbool == true)
+            {
+                //put code here for about
+            }
             
 
 
