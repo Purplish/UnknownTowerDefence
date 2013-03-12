@@ -27,6 +27,9 @@ namespace UnknownTowerDefense
         Button arrowButton;
         SpriteFont font;
         ParticleEngine particleEngine;
+        Texture2D MainMenuTexture;
+        Rectangle RecMainMenu;
+        bool Mainmenubool;
 
         public Game1()
         {
@@ -44,8 +47,9 @@ namespace UnknownTowerDefense
             graphics.ApplyChanges();
             IsMouseVisible = true;
             this.Window.Title = "UnknownTD";
+            Mainmenubool = false;
 
-
+            
         }
 
         /// <summary>
@@ -76,6 +80,12 @@ namespace UnknownTowerDefense
             Texture2D arrowNormal = Content.Load<Texture2D>("tower");
             Texture2D arrowHover = Content.Load<Texture2D>("towerhover");
             Texture2D arrowPressed = Content.Load<Texture2D>("towerpressed");
+            MainMenuTexture = Content.Load<Texture2D>("LoadGame");
+
+
+
+
+            RecMainMenu = new Rectangle(0, 0, MainMenuTexture.Width, MainMenuTexture.Height);
 
             arrowButton = new Button(arrowNormal, arrowHover, arrowPressed, new Vector2(0, level.Height * 32 + 2));
             arrowButton.Clicked += new EventHandler(arrowButton_Clicked);
@@ -132,8 +142,12 @@ namespace UnknownTowerDefense
             waveManager.Update(gameTime);
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
+            if (/*Mouse.GetState().X == RecMainMenu.X && Mouse.GetState().Y == RecMainMenu.Y && Mouse.GetState().LeftButton == ButtonState.Pressed */ Keyboard.GetState().IsKeyDown(Keys.Enter))
+            {
+                Mainmenubool = true;
 
-
+            }
+           
             
 
             List<Enemy> enemies = new List<Enemy>();
@@ -167,26 +181,36 @@ namespace UnknownTowerDefense
         {
                 GraphicsDevice.Clear(Color.CornflowerBlue);
                 float frameRate = 1 / (float)gameTime.ElapsedGameTime.TotalSeconds;
-                
- 
-    spriteBatch.Begin();
-  
-    SpriteFont font = Content.Load<SpriteFont>("Arial");
-    
-    level.Draw(spriteBatch);
+                if (Mainmenubool == false)
+                {
+                    spriteBatch.Begin();
+                    spriteBatch.Draw(MainMenuTexture, RecMainMenu, Color.White);
+                    spriteBatch.End();
+                }
 
-    waveManager.Draw(spriteBatch);
-   
-   
-    toolBar.Draw(spriteBatch, player);
-    arrowButton.Draw(spriteBatch);
-    player.Draw(spriteBatch);
-         
-            spriteBatch.DrawString(font, "FPS: "+(int)frameRate, new Vector2(10,10), Color.Black);
-                 
-particleEngine.Draw(spriteBatch);
-            
-            spriteBatch.End();
+                if (Mainmenubool == true)
+                {
+                    
+                    spriteBatch.Begin();
+
+                    SpriteFont font = Content.Load<SpriteFont>("Arial");
+
+                    level.Draw(spriteBatch);
+
+                    waveManager.Draw(spriteBatch);
+
+
+                    toolBar.Draw(spriteBatch, player);
+                    arrowButton.Draw(spriteBatch);
+                    player.Draw(spriteBatch);
+
+                    spriteBatch.DrawString(font, "FPS: " + (int)frameRate, new Vector2(10, 10), Color.Black);
+
+                    particleEngine.Draw(spriteBatch);
+
+                    spriteBatch.End();
+                }
+    
 
 
     base.Draw(gameTime);
