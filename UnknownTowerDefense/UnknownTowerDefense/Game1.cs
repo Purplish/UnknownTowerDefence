@@ -170,8 +170,22 @@ namespace UnknownTowerDefense
                 Mainmenubool = true;
 
             }
-
-
+            if (RecFutureDevelopment.Contains(Mouse.GetState().X, Mouse.GetState().Y) &&(Mouse.GetState().LeftButton == ButtonState.Pressed))
+            {
+                FutureDevelopmentbool == true;
+            }
+            if (RecAbout.Contains(Mouse.GetState().X, Mouse.GetState().Y) && (Mouse.GetState().LeftButton == ButtonState.Pressed))
+            {
+                Aboutbool == true;
+            }
+            if (RecLoadGame.Contains(Mouse.GetState().X, Mouse.GetState().Y) && (Mouse.GetState().LeftButton == ButtonState.Pressed))
+            {
+                LoadGamebool == true;
+            }
+            if (RecSettings.Countains(Mouse.GetState().Xm Mouse.GetState().Y) && (Mouse.GetState().LeftButton == ButtonState.Pressed))
+            {
+                Settingsbool == true
+            }
             if (Mainmenubool == true)
             {
                 List<Enemy> enemies = new List<Enemy>();
@@ -252,7 +266,22 @@ namespace UnknownTowerDefense
 
                     spriteBatch.End();
                 }
-                
+                if (Aboutbool == true)
+                {
+                    //put code here for drawing the about text
+                }
+                if (Settingsbool == true)
+                {
+                    //put code here for drawing the settings text
+                }
+                if (FutureDevelopmentbool == true)
+                {
+                    //put code here for drwaing futuredevelopment text
+                }
+                if (LoadGamebool == true)
+                {
+                    //put code here for drawing the loaded game.
+                }
 
 
     base.Draw(gameTime);
