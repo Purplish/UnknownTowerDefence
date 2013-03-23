@@ -9,7 +9,7 @@ namespace UnknownTowerDefense
 {
     class Level
     {
-        private int textureWidth = 32;
+
         private Queue<Vector2> waypoints = new Queue<Vector2>();
 
 
@@ -66,17 +66,17 @@ namespace UnknownTowerDefense
 
         public Level()
         {
-            waypoints.Enqueue(new Vector2(2, 0) * textureWidth);
-            waypoints.Enqueue(new Vector2(2, 1) * textureWidth);
-            waypoints.Enqueue(new Vector2(3, 1) * textureWidth);
-            waypoints.Enqueue(new Vector2(3, 2) * textureWidth);
-            waypoints.Enqueue(new Vector2(4, 2) * textureWidth);
-            waypoints.Enqueue(new Vector2(4, 4) * textureWidth);
-            waypoints.Enqueue(new Vector2(3, 4) * textureWidth);
-            waypoints.Enqueue(new Vector2(3, 5) * textureWidth);
-            waypoints.Enqueue(new Vector2(2, 5) * textureWidth);
-            waypoints.Enqueue(new Vector2(2, 7) * textureWidth);
-            waypoints.Enqueue(new Vector2(7, 7) * textureWidth);
+            waypoints.Enqueue(new Vector2(2, 0) * 32);
+            waypoints.Enqueue(new Vector2(2, 1) * 32);
+            waypoints.Enqueue(new Vector2(3, 1) * 32);
+            waypoints.Enqueue(new Vector2(3, 2) * 32);
+            waypoints.Enqueue(new Vector2(4, 2) * 32);
+            waypoints.Enqueue(new Vector2(4, 4) * 32);
+            waypoints.Enqueue(new Vector2(3, 4) * 32);
+            waypoints.Enqueue(new Vector2(3, 5) * 32);
+            waypoints.Enqueue(new Vector2(2, 5) * 32);
+            waypoints.Enqueue(new Vector2(2, 7) * 32);
+            waypoints.Enqueue(new Vector2(7, 7) * 32);
         }
 
         public Queue<Vector2> Waypoints
@@ -103,7 +103,7 @@ namespace UnknownTowerDefense
 
                     Texture2D texture = tileTextures[textureIndex];
                     batch.Draw(texture, new Rectangle(
-                        x * textureWidth, y * textureWidth, textureWidth, textureWidth), Color.White);
+                        x * 32, y * 32, 32, 32), Color.White);
                 }
             }
         }
