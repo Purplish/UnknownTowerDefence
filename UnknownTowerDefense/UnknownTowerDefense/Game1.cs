@@ -35,8 +35,10 @@ namespace UnknownTowerDefense
         Rectangle RecAbout;
         Texture2D SettingsTexture;
         Rectangle RecSettings;
-        Texture2D FutureDevelopmentTexture;;
-        Rectangle RecDevelopment
+        Texture2D FutureDevelopmentTexture;
+        Rectangle RecDevelopment;
+        Rectangle RecLoadGame;
+        Rectangle RecFutureDevelopment;
         
         bool Mainmenubool;
         bool LoadGamebool;
@@ -172,19 +174,19 @@ namespace UnknownTowerDefense
             }
             if (RecFutureDevelopment.Contains(Mouse.GetState().X, Mouse.GetState().Y) &&(Mouse.GetState().LeftButton == ButtonState.Pressed))
             {
-                FutureDevelopmentbool == true;
+                FutureDevelopmentbool = true;
             }
             if (RecAbout.Contains(Mouse.GetState().X, Mouse.GetState().Y) && (Mouse.GetState().LeftButton == ButtonState.Pressed))
             {
-                Aboutbool == true;
+                Aboutbool = true;
             }
             if (RecLoadGame.Contains(Mouse.GetState().X, Mouse.GetState().Y) && (Mouse.GetState().LeftButton == ButtonState.Pressed))
             {
-                LoadGamebool == true;
+                LoadGamebool = true;
             }
-            if (RecSettings.Countains(Mouse.GetState().Xm Mouse.GetState().Y) && (Mouse.GetState().LeftButton == ButtonState.Pressed))
+            if (RecSettings.Contains(Mouse.GetState().X, Mouse.GetState().Y) && (Mouse.GetState().LeftButton == ButtonState.Pressed))
             {
-                Settingsbool == true
+                Settingsbool = true;
             }
             if (Mainmenubool == true)
             {
