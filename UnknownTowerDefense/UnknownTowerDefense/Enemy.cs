@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace UnknownTowerDefense
 {
-    class Enemy : Sprite
+    class Enemy : Sprite : ParticleEngine
     {
         protected float startHealth;
         protected float currentHealth;
@@ -75,13 +75,14 @@ namespace UnknownTowerDefense
         }
         
 
-        public Enemy(Texture2D texture, Vector2 position, float health, int bountyGiven, float speed)
+        public Enemy(Texture2D texture, Vector2 enemyposition, float health, int bountyGiven, float speed)
             : base(texture, position)
         {
             this.startHealth = health;
             this.currentHealth = startHealth;
             this.bountyGiven = bountyGiven;
             this.speed = speed;
+            this.enemyposition = enemyposition;
         }
 
         public override void Update(GameTime gameTime)
@@ -119,9 +120,11 @@ namespace UnknownTowerDefense
             }
             else
                 alive = false;
-            if (currentHealth <= 0)
-                alive = false;
+            if (currentHealth <= 0){
             
+                
+                alive = false;
+            }
             
                 
             
