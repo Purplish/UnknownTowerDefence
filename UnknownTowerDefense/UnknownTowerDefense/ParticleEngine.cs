@@ -7,9 +7,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace UnknownTowerDefense
 {
-    public class ParticleEngine
+    public class ParticleEngine : Enemy
     {
-
+        Enemy enemy;
         private Random random;
         public Vector2 EmitterLocation { get; set; }
         private List<Particle> particles;
@@ -19,13 +19,14 @@ namespace UnknownTowerDefense
 
         public ParticleEngine(List<Texture2D> textures, Vector2 location, int life)
         {
-            EmitterLocation = location;
+            EmitterLocation = enemy.enemyposition;
             this.textures = textures;
             this.particles = new List<Particle>();
             this.life = life;
             random = new Random();
         }
-
+        if (enemy.alive == true)
+        {
         private Particle GenerateNewParticle(int a)
         {
             Texture2D texture = textures[random.Next(textures.Count)];
@@ -79,4 +80,5 @@ namespace UnknownTowerDefense
 
 
     }
+}
 }
