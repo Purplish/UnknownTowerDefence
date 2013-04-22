@@ -17,6 +17,8 @@ namespace UnknownTowerDefense
         protected float modifierDuration;
         protected float modifierCurrentTime;
         protected int bountyGiven;
+        public int enemyX;
+        public int enemyY;
 
 
         private Queue<Vector2> waypoints = new Queue<Vector2>();
@@ -71,6 +73,7 @@ namespace UnknownTowerDefense
         {
             get { return bountyGiven; }
         }
+        
 
         public Enemy(Texture2D texture, Vector2 position, float health, int bountyGiven, float speed)
             : base(texture, position)
