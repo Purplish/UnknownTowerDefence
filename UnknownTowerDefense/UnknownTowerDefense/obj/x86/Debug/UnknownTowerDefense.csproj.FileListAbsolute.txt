@@ -36,3 +36,4 @@ C:\Users\ChowFamily\Documents\GitHub\UnknownTowerDefence\UnknownTowerDefense\Unk
 C:\Users\ChowFamily\Documents\GitHub\UnknownTowerDefence\UnknownTowerDefense\UnknownTowerDefense\obj\x86\Debug\UnknownTowerDefense.exe
 C:\Users\ChowFamily\Documents\GitHub\UnknownTowerDefence\UnknownTowerDefense\UnknownTowerDefense\obj\x86\Debug\UnknownTowerDefense.pdb
 C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\Content\LoadGame.xnb
+C:\Users\Kenny\Documents\Visual Studio 2010\Projects\UnknownTowerDefense\UnknownTowerDefense\UnknownTowerDefense\bin\x86\Debug\TomShane.Neoforce.Controls.dll

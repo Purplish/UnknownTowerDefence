@@ -101,9 +101,9 @@ namespace UnknownTowerDefense
             Texture2D arrowHover = Content.Load<Texture2D>("towerhover");
             Texture2D arrowPressed = Content.Load<Texture2D>("towerpressed");
             MainMenuTexture = Content.Load<Texture2D>("LoadGame");
-            SettingsTexture = Content.Load<Texture2D>("Settings");
+            SettingsTexture = Content.Load<Texture2D>("LoadGame");
             LoadGameTexture = Content.Load<Texture2D>("LoadGame");
-            AboutTexture = Content.Load<Texture2D>("About");
+            AboutTexture = Content.Load<Texture2D>("LoadGame");
 
 
             
@@ -199,7 +199,10 @@ namespace UnknownTowerDefense
             
             if (LoadGamebool == true)
             {
-             //Put code here for Load game
+              List<Enemy> enemies = new List<Enemy>();
+                waveManager.Update(gameTime);
+                arrowButton.Update(gameTime);
+                player.Update(gameTime, waveManager.Enemies);
             }
             if (Settingsbool == true)
             {
